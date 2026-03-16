@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LIEN BIO | Healthcare Partner</title>
+  <meta name="description" content="리엔바이오 공식 홈페이지 시안" />
+  <style>
+    :root{
+      --navy:#0c2d6b;
+      --blue:#1f57c3;
+      --sky:#eef4ff;
+      --text:#18212f;
+      --muted:#61708a;
+      --line:#dbe6f5;
+      --white:#ffffff;
+      --accent:#10b981;
+      --shadow:0 14px 40px rgba(17, 40, 87, 0.12);
+      --radius:22px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Segoe UI", Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      color:var(--text);
+      background:linear-gradient(180deg,#f7fbff 0%,#ffffff 18%,#f8fbff 100%);
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{max-width:var(--max);margin:0 auto;padding:0 22px}
+    .topbar{background:var(--navy);color:#dfe9ff;font-size:13px}
+    .topbar .container{display:flex;justify-content:space-between;gap:18px;align-items:center;padding:10px 22px}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(219,230,245,.9)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:76px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand-mark{width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;font-weight:800;display:grid;place-items:center;box-shadow:var(--shadow)}
+    .brand h1{margin:0;font-size:24px;letter-spacing:.4px;color:var(--navy)}
+    .brand p{margin:0;font-size:12px;color:var(--muted)}
+    nav ul{display:flex;gap:24px;list-style:none;padding:0;margin:0;align-items:center}
+    nav a{font-weight:700;color:#32435f;font-size:15px}
+    nav a:hover{color:var(--blue)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border-radius:14px;font-weight:800;font-size:15px;border:1px solid transparent;transition:.2s ease}
+    .btn-primary{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;box-shadow:var(--shadow)}
+    .btn-outline{border-color:#b9cdee;background:#fff;color:var(--navy)}
+    .hero{position:relative;overflow:hidden;padding:78px 0 54px;background:radial-gradient(circle at 15% 15%, rgba(31,87,195,.16), transparent 25%),radial-gradient(circle at 85% 20%, rgba(16,185,129,.12), transparent 18%),linear-gradient(180deg,#f4f8ff 0%,#ffffff 100%)}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+    .eyebrow{display:inline-block;padding:8px 14px;border-radius:999px;background:#eaf1ff;color:var(--blue);font-size:13px;font-weight:800;margin-bottom:18px;border:1px solid #d7e5ff}
+    .hero h2{font-size:56px;line-height:1.08;margin:0 0 18px;color:#11224b;letter-spacing:-1.3px}
+    .hero p{font-size:18px;color:#4b5b75;margin:0 0 28px;max-width:760px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+    .hero-card{background:rgba(255,255,255,.86);border:1px solid #dfe9f7;border-radius:28px;padding:28px;box-shadow:var(--shadow)}
+    .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+    .stat{background:#fff;border:1px solid #e1eaf6;border-radius:18px;padding:18px}
+    .stat .label{font-size:12px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.8px}
+    .stat .value{font-size:28px;font-weight:900;color:var(--navy);margin-top:6px}
+    section{padding:74px 0}
+    .section-title{display:flex;justify-content:space-between;gap:18px;align-items:end;margin-bottom:26px}
+    .section-title h3{margin:0;font-size:38px;line-height:1.15;color:#10224a}
+    .section-title p{margin:8px 0 0;color:var(--muted);max-width:640px}
+    .badge{padding:7px 12px;background:#edf5ff;border:1px solid #dbe7fb;border-radius:999px;color:var(--blue);font-size:12px;font-weight:800}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:0 10px 28px rgba(18,44,92,.06)}
+    .card h4{margin:0 0 10px;font-size:22px;color:#11224b}
+    .card p{margin:0;color:#55627a}
+    .highlight{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;border-radius:28px;padding:32px;box-shadow:var(--shadow)}
+    .highlight h4{margin:0 0 12px;font-size:28px}
+    .highlight p{margin:0;color:#edf3ff}
+    .info-list{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:12px}
+    .info-list li{display:flex;gap:10px;align-items:flex-start;color:#495773}
+    .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);margin-top:8px;flex:0 0 auto}
+    .product-card{display:flex;flex-direction:column;gap:14px;height:100%}
+    .product-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+    .product-name{font-size:24px;font-weight:900;color:#10224a;margin:0}
+    .product-en{font-size:13px;color:#678;font-weight:700;margin-top:2px}
+    .tag{padding:7px 10px;border-radius:999px;background:#eff7ff;color:var(--blue);border:1px solid #dae8ff;font-size:12px;font-weight:800;white-space:nowrap}
+    .product-meta{display:grid;gap:10px;font-size:14px;color:#526179}
+    .meta-box{padding:12px 14px;border-radius:14px;background:#f7faff;border:1px solid #e3edf9}
+    .product-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
+    .timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .timeline .year{font-size:14px;font-weight:900;color:var(--blue);margin-bottom:10px}
+    .partner-list{display:flex;flex-wrap:wrap;gap:12px}
+    .partner{padding:12px 16px;border:1px solid var(--line);background:#fff;border-radius:999px;font-weight:800;color:#24406f}
+    .contact-box{background:linear-gradient(135deg,#10306f,#1d57c4 60%,#2396d7);color:#fff;border-radius:30px;padding:34px;box-shadow:var(--shadow)}
+    .contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center}
+    .contact-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:24px;padding:24px}
+    .contact-card a{color:#fff;font-weight:800}
+    footer{padding:26px 0 46px;background:#f8fbff;border-top:1px solid #e4edf8;color:#5e6d87}
+    .footer-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center}
+    .small{font-size:14px}
+    .mobile-nav{display:none}
+    @media (max-width:1000px){.hero-grid,.grid-2,.grid-3,.contact-grid,.timeline,.footer-grid{grid-template-columns:1fr}nav ul{display:none}.mobile-nav{display:inline-flex}.hero h2{font-size:42px}.section-title h3{font-size:32px}}
+    @media (max-width:640px){.topbar .container,.nav{padding-left:18px;padding-right:18px}.container{padding:0 18px}.hero{padding-top:48px}.hero h2{font-size:34px}.hero p{font-size:16px}.hero-stats{grid-template-columns:1fr}.btn{width:100%}.hero-actions{flex-direction:column}.section-title{align-items:start;flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <div>LIEN BIO</div>
+      <div>Hospital-focused Healthcare Partner</div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home">
+        <div class="brand-mark">LB</div>
+        <div>
+          <h1>LIEN BIO</h1>
+          <p>Healthcare Distribution & Development</p>
+        </div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#about">회사소개</a></li>
+          <li><a href="#business">사업영역</a></li>
+          <li><a href="#products">제품</a></li>
+          <li><a href="#timeline">로드맵</a></li>
+          <li><a href="#partners">파트너</a></li>
+          <li><a href="#contact">문의</a></li>
+        </ul>
+      </nav>
+      <a href="#contact" class="btn btn-primary mobile-nav">문의하기</a>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Official Website</span>
+          <h2>병원 중심 유통과<br>제품 개발을 잇는<br>LIEN BIO</h2>
+          <p>병원 네트워크, 제품 포트폴리오, 글로벌 확장을 연결하는 헬스케어 파트너.</p>
+          <div class="hero-actions">
+            <a href="#products" class="btn btn-primary">제품 보기</a>
+            <a href="#contact" class="btn btn-outline">협업 문의</a>
+          </div>
+          <div class="partner-list">
+            <span class="partner">Hospital Network</span>
+            <span class="partner">Product Development</span>
+            <span class="partner">Global Expansion</span>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="badge">Corporate Snapshot</div>
+          <h3 style="margin:14px 0 8px;font-size:30px;color:#10224a">LIEN BIO</h3>
+          <p style="margin:0;color:#596a84">핵심 제품과 성장 방향을 담은 회사 소개 페이지</p>
+          <div class="hero-stats">
+            <div class="stat"><div class="label">Core Products</div><div class="value">4+</div></div>
+            <div class="stat"><div class="label">Pipeline</div><div class="value">3+</div></div>
+            <div class="stat"><div class="label">Focus</div><div class="value">Hospital</div></div>
+            <div class="stat"><div class="label">Target</div><div class="value">Japan</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <span class="badge">About</span>
+            <h3>회사소개</h3>
+            <p>병원 유통, 제품 개발, 글로벌 사업을 하나로 연결합니다.</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <h4>회사 개요</h4>
+            <p>리엔바이오는 주요 의료기관 중심의 유통과 개발 프로젝트를 함께 추진하는 헬스케어 기업입니다.</p>
+            <ul class="info-list">
+              <li><span class="dot"></span><span>병원 중심 제품 포지셔닝</span></li>
+              <li><span class="dot"></span><span>공동개발 · 판권 · 유통 연계</span></li>
+              <li><span class="dot"></span><span>제네릭 · 개량신약 확장</span></li>
+              <li><span class="dot"></span><span>일본 중심 글로벌 추진</span></li>
+            </ul>
+          </div>
+          <div class="highlight">
+            <h4>VISION & MISSION</h4>
+            <p><strong>Vision</strong><br>Hospital-based Healthcare Innovation<br><br><strong>Mission</strong><br>유통 · 개발 · 글로벌 확장을 연결하는 성장 플랫폼</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="business" style="background:#f7fbff;border-top:1px solid #e8f0fb;border-bottom:1px solid #e8f0fb;">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <span class="badge">Business</span>
+            <h3>사업영역</h3>
+            <p>리엔바이오의 핵심 사업 구조</p>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <h4>Hospital Network</h4>
+            <p>주요 의료기관 중심 유통 네트워크</p>
+            <ul class="info-list">
+              <li><span class="dot"></span><span>병원·의원·약국 연계</span></li>
+              <li><span class="dot"></span><span>진료과별 타깃 설정</span></li>
+              <li><span class="dot"></span><span>현장 중심 영업 자료</span></li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Product Development</h4>
+            <p>공동개발과 파이프라인 확장</p>
+            <ul class="info-list">
+              <li><span class="dot"></span><span>허가·판권·유통 연계</span></li>
+              <li><span class="dot"></span><span>시장 진입 전략</span></li>
+              <li><span class="dot"></span><span>병원 론칭 포지셔닝</span></li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Global Business</h4>
+            <p>수출 프로젝트와 글로벌 도입</p>
+            <ul class="info-list">
+              <li><span class="dot"></span><span>일본 수출 프로젝트</span></li>
+              <li><span class="dot"></span><span>남성질환 제품 확대</span></li>
+              <li><span class="dot"></span><span>글로벌 파트너십 강화</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <span class="badge">Products</span>
+            <h3>주요 제품</h3>
+            <p>대표 제품과 파이프라인</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card product-card">
+            <div class="product-top"><div><div class="product-name">아멉다정</div><div class="product-en">Amupda Tab.</div></div><div class="tag">Oncology</div></div>
+            <p>Niacinamide 기반 제품</p>
+            <div class="product-meta">
+              <div class="meta-box"><strong>포지션</strong><br>항암 요법 전과 가능</div>
+              <div class="meta-box"><strong>진료과</strong><br>피부과 · 흉부외과</div>
+            </div>
+            <div class="product-actions"><a href="#contact" class="btn btn-primary">상세 문의</a><a href="#contact" class="btn btn-outline">브로셔</a></div>
+          </div>
+
+          <div class="card product-card">
+            <div class="product-top"><div><div class="product-name">리차지아정</div><div class="product-en">Rechargea Tab.</div></div><div class="tag">Recovery</div></div>
+            <p>Citrulline malate 기반 제품</p>
+            <div class="product-meta">
+              <div class="meta-box"><strong>포지션</strong><br>수술 병원 · 퇴원 환자</div>
+              <div class="meta-box"><strong>진료과</strong><br>정형외과 · 비뇨기과</div>
+            </div>
+            <div class="product-actions"><a href="#contact" class="btn btn-primary">상세 문의</a><a href="#contact" class="btn btn-outline">브로셔</a></div>
+          </div>
+
+          <div class="card product-card">
+            <div class="product-top"><div><div class="product-name">와이에스알파정</div><div class="product-en">YS Alpha Tab.</div></div><div class="tag">Bone</div></div>
+            <p>Alfacalcidol 1µg 정제형</p>
+            <div class="product-meta">
+              <div class="meta-box"><strong>포지션</strong><br>종합병원 중심</div>
+              <div class="meta-box"><strong>진료과</strong><br>내분비내과 · 정형외과</div>
+            </div>
+            <div class="product-actions"><a href="#contact" class="btn btn-primary">상세 문의</a><a href="#contact" class="btn btn-outline">브로셔</a></div>
+          </div>
+
+          <div class="card product-card">
+            <div class="product-top"><div><div class="product-name">멀티뉴5주</div><div class="product-en">MultiNew5 Inj.</div></div><div class="tag">Injection</div></div>
+            <p>미량원소 보충 주사</p>
+            <div class="product-meta">
+              <div class="meta-box"><strong>포지션</strong><br>수액 전용 비타민제</div>
+              <div class="meta-box"><strong>진료과</strong><br>수액치료 기반 전과</div>
+            </div>
+            <div class="product-actions"><a href="#contact" class="btn btn-primary">상세 문의</a><a href="#contact" class="btn btn-outline">브로셔</a></div>
+          </div>
+        </div>
+
+        <div style="height:22px"></div>
+
+        <div class="card">
+          <div class="section-title" style="margin-bottom:18px">
+            <div><span class="badge">2026 Pipeline</span><h3 style="font-size:30px">파이프라인</h3></div>
+          </div>
+          <div class="grid-3">
+            <div class="card" style="padding:20px;background:#fbfdff"><h4 style="font-size:20px">두타+타다 복합제</h4><p>일본 수출 프로젝트</p></div>
+            <div class="card" style="padding:20px;background:#fbfdff"><h4 style="font-size:20px">두타스테리드</h4><p>남성질환 포트폴리오</p></div>
+            <div class="card" style="padding:20px;background:#fbfdff"><h4 style="font-size:20px">타우로리딘 주사</h4><p>수술 · 감염 관련 제품군</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline" style="background:#f7fbff;border-top:1px solid #e8f0fb;border-bottom:1px solid #e8f0fb;">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <span class="badge">Roadmap</span>
+            <h3>기업 로드맵</h3>
+            <p>포트폴리오와 확장 방향</p>
+          </div>
+        </div>
+        <div class="timeline">
+          <div class="card"><div class="year">2025</div><h4>포트폴리오 구축</h4><p>아멉다정 · 리차지아정 중심</p></div>
+          <div class="card"><div class="year">2026 H1</div><h4>핵심 제품 확대</h4><p>YS Alpha · 멀티뉴5주 운영</p></div>
+          <div class="card"><div class="year">2026 H2</div><h4>파이프라인 확장</h4><p>두타스테리드 · 주사제 확대</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="partners">
+      <div class="container">
+        <div class="section-title">
+          <div>
+            <span class="badge">Partners</span>
+            <h3>파트너사</h3>
+            <p>리엔바이오 협업 네트워크</p>
+          </div>
+        </div>
+        <div class="partner-list">
+          <span class="partner">노바엠헬스케어</span>
+          <span class="partner">유앤생명과학</span>
+          <span class="partner">보란파마</span>
+          <span class="partner">YS생명과학</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="card">
+          <div class="section-title" style="margin-bottom:10px;">
+            <div><span class="badge">CEO Message</span><h3 style="font-size:30px">대표 메시지</h3></div>
+          </div>
+          <p style="font-size:16px;color:#4f607b;margin:0;max-width:980px">
+            리엔바이오는 병원 중심 네트워크를 바탕으로 유통과 제품 개발을 함께 추진합니다.
+            현장에 필요한 제품을 빠르게 연결하고, 파트너와 함께 새로운 기회를 만들어가겠습니다.
+            <br><br><strong>리엔바이오 대표 이승엽</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div class="contact-grid">
+            <div>
+              <span class="badge" style="background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.18);color:#fff">Contact</span>
+              <h3 style="margin:14px 0 10px;font-size:40px;line-height:1.15">병원 · 파트너 협업 문의</h3>
+              <p style="margin:0;color:#e4ecff;max-width:700px">제품 유통, 공동개발, 판권, 수출입 관련 문의를 위한 공식 연락처입니다.</p>
+            </div>
+            <div class="contact-card">
+              <div style="font-size:13px;font-weight:800;opacity:.9">LIEN BIO</div>
+              <div style="font-size:24px;font-weight:900;margin:8px 0 14px">협업 문의</div>
+              <div style="display:grid;gap:8px;font-size:15px;line-height:1.65">
+                <div>대표 이승엽</div>
+                <a href="tel:01056053055">010-5605-3055</a>
+                <a href="mailto:seungyeobi278@gmail.com">seungyeobi278@gmail.com</a>
+                <div>제품 유통 · 공동개발 · 수출입 협력</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="small">© 2026 LIEN BIO. All rights reserved.</div>
+      <div class="small" style="text-align:right">경기도 남양주시 오남읍 진건오남로 864 3층 · 대표 이승엽</div>
+    </div>
+  </footer>
+</body>
+</html>
